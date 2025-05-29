@@ -21,7 +21,30 @@ jobs:
       with:
         java-version: '24'
         distribution: 'corretto'
-        
+
+    - name: Display Context Information
+      env:
+        LOCAL_VAR: "hello-world"
+      run: |
+        echo "=== Environment Context ==="
+        echo "Java Version (env): ${{ env.JAVA_VERSION }}"
+        echo "Build Environment (env): ${{ env.BUILD_ENV }}"
+        echo "Local Variable (env): ${{ env.LOCAL_VAR }}"
+        echo ""
+        echo "=== Job Context ==="
+        echo "Job Status: ${{ job.status }}"
+        echo "Job Container: ${{ job.container }}"
+        echo ""
+        echo "=== Runner Context ==="
+        echo "Runner OS: ${{ runner.os }}"
+        echo "Runner Architecture: ${{ runner.arch }}"
+        echo "Runner Name: ${{ runner.name }}"
+        echo "Runner Tool Cache: ${{ runner.tool_cache }}"
+        echo ""
+        echo "=== Steps Context ==="
+        echo "Previous Step Outcome: ${{ steps.checkout.outcome }}"
+        echo "Previous Step Conclusion: ${{ steps.setup-java.conclusion }}"
+      
     - name: Verify Java installation
       run: |
         java -version
