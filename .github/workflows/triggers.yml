@@ -51,12 +51,6 @@ jobs:
         javac -version
         echo "Java setup complete on Linux"
         
-    - name: Compile Java program
-      run: javac src/main/java/HelloWorld.java
-      
-    - name: Run Java program
-      run: java -cp src/main/java HelloWorld
-
     - name: Compile Root Java program
       run: javac HelloWorld.java
 
