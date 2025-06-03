@@ -27,14 +27,6 @@ on:
        type: string
        required: true
 jobs:
-  build-manual:
-    runs-on: ubuntu-latest
-    steps:
-    - name: checkout
-    - uses: actions/checkout@v4
-    - name: Definir nombre
-      run: echo "ENVIRO=${{ inputs.environment" }} >> $GITHUB_ENV
-  
   build:
     if: ${{ github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
