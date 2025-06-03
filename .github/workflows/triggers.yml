@@ -18,6 +18,14 @@ on:
        options:
        - bajo
        - medio
+     tags:
+         description: 'Opcional'
+         required: false
+         type: boolean
+     environment:
+       description: 'Objetivo'
+       type: string
+       required: true
 jobs:
   build:
 
