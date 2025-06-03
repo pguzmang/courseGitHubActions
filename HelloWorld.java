@@ -25,7 +25,7 @@ public class HelloWorld {
             // If at least one command-line argument is provided, print it.
             System.out.println("\nParameter provided from terminal: " + args[0]);
         } else {
-            / If no command-line arguments are provided, please let the user know.
+            // If no command-line arguments are provided, please let the user know.
             System.out.println("\nNo parameter was provided from the terminal.");
             System.out.println("You can run this program with a parameter like: java -cp . HelloWorld YourParameter");
         }
