@@ -19,6 +19,16 @@ public class HelloWorld {
         // Record classes (Java 14+)
         Person person = new Person("Java Developer", 21);
         System.out.println("Hello from " + person.name() + ", Java version " + person.version());
+
+        // --- New: Displaying a parameter from the VM terminal ---
+        if (args.length > 0) {
+            // If at least one command-line argument is provided, print it.
+            System.out.println("\nParameter provided from terminal: " + args[0]);
+        } else {
+            / If no command-line arguments are provided, please let the user know.
+            System.out.println("\nNo parameter was provided from the terminal.");
+            System.out.println("You can run this program with a parameter like: java -cp . HelloWorld YourParameter");
+        }
     }
     
     // Switch expressions with pattern matching
