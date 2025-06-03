@@ -43,6 +43,7 @@ jobs:
         echo "=== Steps Context ==="
         echo "Previous Step Outcome: ${{ steps.checkout.outcome }}"
         echo "Previous Step Conclusion: ${{ steps.setup-java.conclusion }}"
+        echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
         
     - name: Verify Java installation
       run: |
