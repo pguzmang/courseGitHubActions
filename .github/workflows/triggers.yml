@@ -8,7 +8,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+  workflow_dispatch:
+    inputs:
+     alerta:
+       description: 'nivel'
+       required: true
+       default: medio
+       type: choice
+       options:
+       - bajo
+       - medio
 jobs:
   build:
 
