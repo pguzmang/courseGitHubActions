@@ -1,0 +1,12 @@
+# This workflow will build a Java project with Ant
+# For more information, see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: Contextos Java CI
+
+on: push
+jobs:
+  check-main:
+    if:   ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "Desplegando en la ramA $GITHUB_REF"

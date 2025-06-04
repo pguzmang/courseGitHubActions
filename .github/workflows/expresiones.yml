@@ -1,0 +1,30 @@
+# This workflow will build a Java project with javac
+# For more information, see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+name: Expresiones Java CI
+run-name: Usando mis primeras expresiones
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: number
+      nombre:
+       description: 'Tu nombre'
+       required: true
+       type: string
+jobs:
+  mayor:
+    if: ${{ inputs.edad >= 18 }}   
+    runs-on: ubutu-latest
+    steps:
+      - name: Correr script
+        run:  echo ${{ inputs.nombre }} es mayor de edad
+  menor:
+     if: ${{ inputs.edad < 18 }}
+     runs-on: ubuntu-latest
+     steps:
+       - name: Correr script
+         run: echo ${{ inputs.nombre }} es menor de edad
