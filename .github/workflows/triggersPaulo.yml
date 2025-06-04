@@ -13,9 +13,21 @@ on:
       nombre:
        description: 'Tu nombre'
        required:  true
-       type: String
+       type: string
 jobs:
+  build-manual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 24
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+      - name: Definir nombre
+        run: echo "NOMBREvAL=${{ inputs.nombre }}" >> $GTIHUB_ENV
   build:
+    if: ${{ github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
