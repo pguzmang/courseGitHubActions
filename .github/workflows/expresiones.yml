@@ -3,6 +3,8 @@
 name: Expresiones Java CI
 run-name: Usando mis primeras expresiones
 on:
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
     inputs:
       edad:
