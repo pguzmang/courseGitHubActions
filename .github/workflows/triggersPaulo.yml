@@ -25,7 +25,7 @@ jobs:
           java-version: '21'
           distribution: 'corretto'
       - name: Definir nombre
-        run: echo "NOMBREvAL=${{ inputs.nombre }}" >> $GTIHUB_ENV
+        run: echo "NOMBREvAL=${{ inputs.nombre }}" >> $GITHUB_ENV
   build:
     if: ${{ github.event_name != 'workflow_dispatch' }}
     runs-on: ubuntu-latest
