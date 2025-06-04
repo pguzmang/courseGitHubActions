@@ -8,6 +8,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      nombre:
+       description: 'Tu nombre'
+       required:  true
+       type: String
 jobs:
   build:
     runs-on: ubuntu-latest
