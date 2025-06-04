@@ -9,4 +9,4 @@ jobs:
     if:   ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-    - run: echo "Desplegando en la ram $GITHUB_REF"
+    - run: echo "Desplegando en la ramA $GITHUB_REF"
